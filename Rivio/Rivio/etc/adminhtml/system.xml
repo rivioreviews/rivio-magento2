@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <tab id="rivio" translate="label" sortOrder="100">
+            <label>RIVIO</label>
+        </tab>
+        <section id="rivio" translate="label" sortOrder="130" showInDefault="0" showInWebsite="0" showInStore="1">
+            <class>separator-top</class>
+            <label>RIVIO Reviews</label>
+            <tab>rivio</tab>
+            <resource>Rivio_Rivio::settings</resource>
+            <group id="settings" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
+                <label>RIVIO Widget Configurations</label>
+                                        <comment>
+                <![CDATA[
+                    <p>
+                        Welcome to RIVIO Reviews your smart review generation tool specifically developed for Magento!<br/>
+                        To start custom set-up of RIVIO to your webshop, first please finish installation of the app by entering your Api Key and Secret Key in the below fields.<br/>
+                        Now <a href="https://dashboard.getrivio.com" target="_blank">click here for RIVIO’s Dashboard</a> to fine-tune your app for your needs and to check out all features available to get you going.<br/>
+                        If you need any assistance or ideas, don't hesitate to contact our support team <a href="http://support.getrivio.com" target="_blank">here</a>.<br/>
+                        For further information, check our <a href="https://support.getrivio.com" target="_blank">Advanced Customization Guide</a>.<br/><br/>
+                        If you don’t have an App Key yet, <a href="https://dashboard.getrivio.com" target="_blank">click here to sign up / sign in</a>!
+                    </p>
+                ]]>
+            </comment>
+                <field id="app_key" translate="label" type="text" sortOrder="1" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>API key</label>
+                    <validate>required-entry</validate>
+                    <backend_model>Rivio\Rivio\Model\Config\Backend\ValidateSettings</backend_model>
+                    <comment><![CDATA[
+                                Use your Api Key provided on your RIVIO account setting page then <a href="http://dashboard.getrivio.com/dashboard/settings/business" target="_blank">click here</a> to sign in to RIVIO.
+                            ]]>
+                    </comment>                    
+                </field>
+                <field id="secret" translate="label comment" type="text" sortOrder="2" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Secret</label>
+                    <validate>required-entry</validate>
+                    <backend_model>Rivio\Rivio\Model\Config\Backend\ValidateSettings</backend_model>
+                    <comment><![CDATA[
+                                Now use your Secret Key provided on your RIVIO account setting page then <a href="http://dashboard.getrivio.com/dashboard/settings/business" target="_blank">click here</a> to sign in to RIVIO.
+                            ]]>
+                    </comment>                    
+                </field>
+                <field id="widget_enabled" translate="label" type="select" sortOrder="3" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Enable Default Widget Position</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <backend_model>Rivio\Rivio\Model\Config\Backend\ValidateSettings</backend_model>
+                    <comment><![CDATA[
+                                If you chose <i>NO</i> to Enable Default Widget Position, you’ll be able to add it manually. For additional infos and tips, check the <a href="http://support.getrivio.com" target="_blank">Advanced Customization Guide</a>.
+                            ]]>
+                    </comment>                    
+                </field>
+                <field id="stars_enabled" translate="label" type="select" sortOrder="4" showInDefault="0" showInWebsite="0" showInStore="1">
+                    <label>Show Rivio Stars</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <backend_model>Rivio\Rivio\Model\Config\Backend\ValidateSettings</backend_model>
+                    <comment>
+                      <![CDATA[
+                          By choosing not to use the deafult position, you'll need to follow the instructions in the
+                          <br/><a href="http://support.getrivio.com" target="_blank">advanced customizations guide</a>
+                      ]]>
+                    </comment>                    
+                </field>
+                 <field id="rivio_button" translate="button_label" sortOrder="5" showInDefault="0" showInWebsite="0" showInStore="1">
+                     <label>Past orders</label>
+                    <button_label>Generate reviews for my past orders</button_label>
+                    <frontend_model>Rivio\Rivio\Block\Adminhtml\System\Config\Form\RivioButton</frontend_model>
+                     <comment>
+                         <![CDATA[
+                          This option triggers the Post-Purchase Email to your customers of already delivered orders. Delaying your Post-Purchase E-mails is also possible through the RIVIO Dashboard for specific products/services selected. <a href="http://dashboard.getrivio.com/dashboard/email/settings" target="_blank">Click here</a> to check this option.<br/>
+                            Please be patient, as generating and sending out all emails for past orders may take a while.
+                          ]]>
+                     </comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,14 @@
+<?php if( $this->isRenderWidget()) { ?>
+<div class="reevio"
+     data-reevio-api-key="<?php echo $this->_config->getAppKey(); ?>"
+     data-reevio-product-id="<?php echo $this->getProductId() ?>"
+     data-reevio-name="<?php echo $this->getProductName() ?>"
+     data-reevio-lang="<?php echo $this->getLanguageCode(); ?>"
+     data-reevio-url="<?php echo $this->getProductUrl() ?>"
+     data-reevio-image-url="<?php echo $this->getProductImageUrl() ?>"
+     data-reevio-description='<?php echo $this->getProductDescription() ?>'
+     data-reevio-barcode="<?php echo $this->getProductModel() ;?>"
+     data-reevio-type="<?php echo $this->getProductCategory() ?>"
+     data-reevio-price="<?php echo $this->getProductPrice() ?>">
+</div><div style="text-align:right"><a href="http://getrivio.com" style="opacity:0.8;font-size:11px;">Product reviews by Rivio</a></div>
+<?php }  ?>

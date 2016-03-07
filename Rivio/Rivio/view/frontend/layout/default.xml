@@ -1,0 +1,17 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <body>
+
+		<referenceContainer name="content">
+	        <block class="Rivio\Rivio\Block\Rivio" name="rivio" template="widget_script.phtml"/>
+	    </referenceContainer>
+
+        <referenceBlock name="content.aside">
+            <block class="Rivio\Rivio\Block\Rivio" name="widget_div" template="widget_div.phtml"/>
+        </referenceBlock>
+
+       <referenceContainer name="product.info.main">
+            <block  class="Rivio\Rivio\Block\Rivio" name="stars" as="other" template="stars.phtml" before="product.info.addto"/>
+        </referenceContainer>
+
+    </body>
+</page>
