@@ -13,3 +13,26 @@
     }
   }
 }
+
+{
+    "name": "rivio/rivio",
+    "description": "Rivio Reviews for Magento 2",
+    "require": {
+        "magento/magento-composer-installer": "*"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "Rivio\\": "app/code/Rivio"
+    },
+    "extra": {
+        "map": [
+            [
+                "*",
+                "Rivio/Rivio"
+            ]
+        ]
+    }
+}
