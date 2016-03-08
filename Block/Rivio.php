@@ -55,11 +55,15 @@ class Rivio extends \Magento\Framework\View\Element\Template
         // Get product categories
         $cats = $this->getProduct()->getCategoryIds();
 
-        /** @var \Magento\Framework\ObjectManagerInterface $om */
-        $om = \Magento\Framework\App\ObjectManager::getInstance();
+        if (isset($cats[0])){
+            /** @var \Magento\Framework\ObjectManagerInterface $om */
+            $om = \Magento\Framework\App\ObjectManager::getInstance();
 
-        // Get the category name
-        $category = $om->get('\Magento\Catalog\Model\CategoryFactory')->create()->load($cats[0])->getName();
+            // Get the category name
+            $category = $om->get('\Magento\Catalog\Model\CategoryFactory')->create()->load($cats[0])->getName();
+        } else{
+            $category = "Default category";
+        }
 
         return $category;
     }
